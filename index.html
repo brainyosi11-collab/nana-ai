@@ -41,8 +41,7 @@ border-radius:10px;
 <body>
 
 <h1>ココナ先生 🌸</h1>
-
-<p>あなたのやさしいダイエットメンター</p>
+<p>やさしいダイエットメンター</p>
 
 <div class="chatbox">
 
@@ -56,12 +55,22 @@ border-radius:10px;
 
 <script>
 
-function send(){
+async function send(){
 
 let msg = document.getElementById("message").value;
 
-document.getElementById("reply").innerHTML =
-"ココナ先生：大丈夫ですよ🌸 少しずつ一緒に頑張りましょう。";
+let response = await fetch("/api/chat",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({message:msg})
+});
+
+let data = await response.json();
+
+document.getElementById("reply").innerText =
+"ココナ先生：" + data.reply;
 
 }
 
