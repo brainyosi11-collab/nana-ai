@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ココナ先生</title>
+
+<style>
+body{
+font-family: Arial;
+background:#fff7f9;
+text-align:center;
+padding:40px;
+}
+
+h1{
+color:#ff6fa5;
+}
+
+.chatbox{
+width:80%;
+max-width:500px;
+margin:auto;
+}
+
+input{
+width:70%;
+padding:10px;
+}
+
+button{
+padding:10px 20px;
+background:#ff6fa5;
+color:white;
+border:none;
+border-radius:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>ココナ先生 🌸</h1>
+
+<p>あなたのやさしいダイエットメンター</p>
+
+<div class="chatbox">
+
+<input id="message" placeholder="今日はどんな気分？">
+
+<button onclick="send()">相談する</button>
+
+<p id="reply"></p>
+
+</div>
+
+<script>
+
+function send(){
+
+let msg = document.getElementById("message").value;
+
+document.getElementById("reply").innerHTML =
+"ココナ先生：大丈夫ですよ🌸 少しずつ一緒に頑張りましょう。";
+
+}
+
+</script>
+
+</body>
+</html>
